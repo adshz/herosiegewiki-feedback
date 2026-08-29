@@ -1,0 +1,79 @@
+name: Page correction
+description: Report inaccurate, outdated, missing, or poorly translated wiki content.
+title: "[Correction]: "
+labels:
+  - content correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Hero Siege Wiki. This is a public tracker for the independent fan wiki, not an official Hero Siege support channel.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Page language
+      description: Which language is the affected page written in?
+      options:
+        - English
+        - Español
+        - Português
+        - Русский
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page_url
+    attributes:
+      label: Wiki page URL
+      description: Paste the complete herosiegewiki.com URL that needs correction.
+      placeholder: https://herosiegewiki.com/builds/example
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What needs attention?
+      options:
+        - Inaccurate information
+        - Outdated information
+        - Missing context
+        - Translation problem
+        - Broken link or page behavior
+        - Other wiki issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Quote or identify the affected section, explain what is wrong, and state what it should say instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Link a reliable source or describe reproducible in-game steps. If no external source exists, explain how you verified the correction.
+    validations:
+      required: true
+
+  - type: input
+    id: game_version
+    attributes:
+      label: Hero Siege version or season
+      description: Include this when the correction may depend on a patch, platform, or season.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Public-report confirmation
+      options:
+        - label: I understand this report and its attachments will be public, and I have removed private account or payment information.
+          required: true
+        - label: I understand this tracker cannot provide official game, account, purchase, ban, crash, or multiplayer support.
+          required: true
